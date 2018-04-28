@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<title></title>
+	</head>
+	<body>
+		<div style="width:600px;">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<td colspan="10" style="line-height:35px;">
+							<div class="form-inline">
+								当前城市：<span id="parent_city">安徽</span> > <span id="location">合肥</span>
+								<button type="button" class="btn btn-link savelocal">设为默认城市</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<div class="form-group" style="float:right; width:220px;">
+									<div class="input-group" style="float:left;">
+										<input type="text" class="form-control input-sm" id="inputCity" placeholder="请输入查询城市">
+									</div>
+									<button type="button" class="btn btn-info btn-sm getweather" style="float:right;">查询</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="10">
+							当前天气：
+							温度：<span id="now_tmp"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+							体感温度：<span id="now_fl"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+							天气状况：<span id="now_cond"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th>日期</th>
+						<th>最高温度</th>
+						<th>最低温度</th>
+						<th>白天天气</th>
+						<th>晚间天气</th>
+						<th>风向</th>
+						<th>风力</th>
+					</tr>
+				</thead>
+				<tbody id="Weather"></tbody>
+			</table>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/popup.js"></script>
