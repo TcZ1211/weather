@@ -5,24 +5,19 @@ chrome.storage.local.get("myCity",function(date){
 	if( typeof(date.myCity)!='undefined' ){
 		city = date.myCity;
 	}
-	console.log(city);
-	console.log(date);
 	GetWeather(city);
 })
 
-//获取机构
+//获取天气
 function GetWeather(local) {
 	
 	$.ajax({
 		url: 'http://iloli.us/api/Weather.php',
 		type: 'post',
 		async: false,
-		//dataType:'jsonp',
-		//jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
 		data: {'action': 'GetWeather','location': local},
 		success: function (res) {
 			var obj = JSON.parse(res); //由JSON字符串转换为JSON对象
-			//var obj = res; //由JSON字符串转换为JSON对象
 			if( obj.status=='ok' ){
 				var html = '';
 				$.each(obj.daily_forecast,function(i,n){
@@ -55,12 +50,9 @@ function GetWeather(local) {
 		url: 'http://iloli.us/api/Weather.php',
 		type: 'post',
 		async: false,
-		//dataType:'jsonp',
-		//jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
 		data: {'action': 'GetNowWeather','location': local},
 		success: function (res) {
 			var obj = JSON.parse(res); //由JSON字符串转换为JSON对象
-			//var obj = res; //由JSON字符串转换为JSON对象
 			if( obj.status=='ok' ){
 				$('#now_tmp').html(obj.now.tmp+'℃');
 				$('#now_fl').html(obj.now.fl+'℃');
